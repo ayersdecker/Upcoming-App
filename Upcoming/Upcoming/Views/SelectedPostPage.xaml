@@ -4,9 +4,6 @@
              x:Class="Upcoming.Views.SelectedPostPage"
              Title="SelectedPostPage">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <WebView x:Name="ViewArticle"/>
     </VerticalStackLayout>
 </ContentPage>

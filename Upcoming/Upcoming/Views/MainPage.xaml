@@ -2,7 +2,12 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Upcoming.MainPage"
+             xmlns:mct="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
+             xmlns:local="clr-namespace:Upcoming.Models"
              Shell.NavBarHasShadow="False">
+    <ContentPage.Behaviors>
+        <mct:StatusBarBehavior StatusBarColor="#78f59b" StatusBarStyle="DarkContent"/>
+    </ContentPage.Behaviors>
 
     <Grid BackgroundColor="#333">
         <Grid.RowDefinitions>
@@ -17,13 +22,35 @@
                 <ColumnDefinition Width="50"/>
             </Grid.ColumnDefinitions>
 
-            <Label Text="Upcoming" TextColor="#78f59b" FontAttributes="Bold" FontSize="Large" VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="0"/>
-            <ImageButton Source="search" BorderColor="#78f59b" Scale=".5" Grid.Column="1"/>
-            <ImageButton Source="ham" Scale=".5"  Grid.Column="2"/>
+            <Label Text="Upcoming" TextColor="#78f59b" FontFamily="Shrikhand-Regular" FontSize="Large" Margin="5,0,0,0" VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="0"/>
+            <ImageButton Source="search" BorderColor="#78f59b" Scale=".5"  VerticalOptions="Center" Grid.Column="1"/>
+            <ImageButton Source="ham" Scale=".5" VerticalOptions="Center" Grid.Column="2"/>
 
         </Grid>
 
-        <CollectionView Grid.Row="1"></CollectionView>
+        <CollectionView Grid.Row="1" x:Name="ArticleCollection" CanReorderItems="True">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="local:PostCardModel">
+                    <Frame CornerRadius="10" HeightRequest="220" BackgroundColor="#333" BorderColor="#111">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition/>
+                                <RowDefinition Height="40"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding Title}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="Start" TextColor="#78f59b" FontSize="Medium" FontAttributes="Bold"/>
+                            <Label Text="{Binding Description}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" />
+                            <Button Text="Read More" Grid.Row="2" Grid.Column="2" Clicked="Button_Clicked" TextColor="#78f59b" BackgroundColor="#333"/>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
     </Grid>
 
