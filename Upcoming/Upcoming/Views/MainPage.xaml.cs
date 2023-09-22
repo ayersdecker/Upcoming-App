@@ -44,5 +44,15 @@ public partial class MainPage : ContentPage
         Uri url = new Uri(obj.SourceURL);
         await Browser.Default.OpenAsync(url);
     }
+
+    private void Search_Clicked(object sender, EventArgs e)
+    {
+
+    }
+
+    private void Menu_Clicked(object sender, EventArgs e)
+    {
+
+    }
 }
 
