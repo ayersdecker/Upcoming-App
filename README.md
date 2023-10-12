@@ -7,11 +7,11 @@ A technology-focused application that shows the most recent news articles and ev
 ## Development Stages
 
 - [x] Initial Setup (.NET MAUI)
-- [ ] Create Navigation Frame
-- [ ] Service Layer (API)
-- [ ] Design UI / Article Card / Article
-- [ ] Implement UI / Article Card / Article
-- [ ] Tie API to UI
+- [x] Create Navigation Frame
+- [x] Service Layer (API)
+- [x] Design UI / Article Card / Article
+- [x] Implement UI / Article Card / Article
+- [x] Tie API to UI
 - [ ] Support Filtering
 - [ ] Support Search (Possibly)
 
