@@ -41,4 +41,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Contact
 
-[Email](ayersdecker@gmail.com) or [Website](https://deckerayers.com/)
+ayersdecker@gmail.com or [Website](https://deckerayers.com/)
